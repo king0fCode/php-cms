@@ -25,7 +25,7 @@ include 'includes/header.php';?>
 
 <?php
 
-$arg = ['SELECT' => '*', 'TABLE' => 'posts '];
+$arg = ['SELECT' => T_ALL, 'TABLE' => T_POSTS];
 $PostResults = IndexData($arg, $db);
 
 // $result = GetPosts($db);
@@ -36,29 +36,33 @@ if ($PostResults) {
         # code...
         // print_r($value);
 
-        $title = $value[post_title];
-        $author = $value[post_author];
-        $date = $value[post_date];
+
+
+
         $image = $value[post_image];
-        $content = $value[post_content];
+
 
         ?>
 
 
                 <!-- fetch Blog Posts -->
                 <h2>
-                    <a href="#"><?php echo $title; ?> </a>
+                    <a href="#"><?php $value[post_title];
+        ?> </a>
                 </h2>
                 <p class="lead">
-               <a href="index.php"><?php echo $author; ?>
+               <a href="index.php"><?php echo $value[post_author];
+ ?>
 </a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $date; ?>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $value[post_date];
+ ?>
 </p>
                 <hr>
                 <img class="img-responsive" src="<?php echo $img = GetImage(900, 400); ?>" alt="">
                 <hr>
-                <p><?php echo $content; ?>
+                <p><?php echo $value[post_content];
+ ?>
 </p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 

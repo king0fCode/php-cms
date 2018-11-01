@@ -4,7 +4,6 @@ error_reporting(1);
 class Database
 {
 
-
     private static $db;
     private $connection;
 

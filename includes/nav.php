@@ -1,8 +1,7 @@
-
 <?php function GetData($db)
 {
 
-    $query = "SELECT * FROM `categories`";
+    $query = "SELECT " . T_ALL . " FROM " . T_CATEGORIES;
     $dataR = mysqli_query($db, $query);
     echo "<br>";
     if ($dataR) {
@@ -28,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">CMS PHP</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
